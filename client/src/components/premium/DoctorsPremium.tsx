@@ -47,7 +47,7 @@ export default function DoctorsPremium() {
                 className="group flex flex-col bg-[#FCFAF7] border border-[#EAE3D9] rounded-[12px] p-2.5 hover:border-[#D9B77A]/50 transition-all duration-400 hover:shadow-[0_8px_24px_rgba(18,50,71,0.06)] hover:-translate-y-1"
               >
                 {/* Photo — consistent 4:5 with rounded-[14px] */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#F7F2EA] rounded-[14px]">
+                <div className="relative w-full overflow-hidden bg-[#F7F2EA] rounded-[14px]" style={{ aspectRatio: "4/5" }}>
                   <img
                     src={doc.imageCompressed}
                     alt={name}

@@ -44,12 +44,18 @@ export default function HeaderPremium() {
               aria-label="Unique Instituto — Página inicial"
               className="flex items-center shrink-0"
             >
+              {/* Mobile Logo */}
               <img
-                src="/logosemfundo-removebg-preview.png"
+                src={isScrolled ? "/logomaior.png" : "/mobilelogo.png"}
                 alt="Unique Instituto de Cirurgia"
-                className={`w-auto object-contain transition-all duration-400 ${
-                  isScrolled ? "h-8 sm:h-9 md:h-10" : "h-9 sm:h-10 md:h-12"
-                }`}
+                className="block sm:hidden w-auto object-contain max-w-[155px] transition-all duration-400 h-[34px]"
+                style={!isScrolled ? { filter: "brightness(0) invert(1)" } : {}}
+              />
+              {/* Desktop Logo */}
+              <img
+                src={isScrolled ? "/logomaior.png" : "/logocerta.png"}
+                alt="Unique Instituto de Cirurgia"
+                className="hidden sm:block w-auto object-contain max-w-[220px] transition-all duration-400 h-[40px]"
                 style={!isScrolled ? { filter: "brightness(0) invert(1)" } : {}}
               />
             </a>
@@ -62,7 +68,7 @@ export default function HeaderPremium() {
                   href={link.href}
                   className={`text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 relative py-1 group ${
                     isScrolled
-                      ? "text-[#667789] hover:text-[#123247]"
+                      ? "text-[#0B1F2E] hover:text-[#D9B77A]"
                       : "text-white/75 hover:text-white"
                   }`}
                 >
@@ -99,7 +105,7 @@ export default function HeaderPremium() {
                 rel="noopener noreferrer"
                 className={`inline-flex items-center px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] rounded-[6px] transition-all duration-300 ${
                   isScrolled
-                    ? "bg-[#123247] text-[#FCFAF7] hover:bg-[#0B1F2E]"
+                    ? "bg-[#0B1F2E] text-[#FCFAF7] hover:bg-[#123247]"
                     : "bg-[#D9B77A] text-[#0B1F2E] hover:bg-[#c8a568]"
                 }`}
               >
@@ -110,8 +116,8 @@ export default function HeaderPremium() {
             {/* Mobile: Menu toggle */}
             <button
               onClick={() => setIsMobileOpen((v) => !v)}
-              className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-[6px] transition-colors duration-200 focus:outline-none ${
-                isScrolled ? "text-[#123247]" : "text-white"
+              className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-[6px] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9B77A] focus-visible:ring-offset-2 ${
+                isScrolled ? "text-[#0B1F2E]" : "text-white"
               }`}
               aria-label={isMobileOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={isMobileOpen}
@@ -136,13 +142,13 @@ export default function HeaderPremium() {
             {/* Mobile header bar */}
             <div className="flex items-center justify-between px-5 sm:px-6 h-18 border-b border-[#EAE3D9]/60 shrink-0">
               <img
-                src="/logosemfundo-removebg-preview.png"
+                src="/logomaior.png"
                 alt="Unique Instituto"
-                className="h-[34px] w-auto object-contain"
+                className="h-[34px] w-auto object-contain max-w-[155px]"
               />
               <button
                 onClick={() => setIsMobileOpen(false)}
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[#123247] focus:outline-none"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[#123247] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9B77A] focus-visible:ring-offset-2"
                 aria-label="Fechar menu"
               >
                 <X size={24} />

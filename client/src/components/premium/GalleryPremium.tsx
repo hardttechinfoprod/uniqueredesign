@@ -56,7 +56,8 @@ export default function GalleryPremium() {
           {featured.map((img, idx) => (
             <div
               key={idx}
-              className="relative rounded-[12px] overflow-hidden border border-[#EAE3D9] aspect-[4/3] cursor-pointer"
+              className="relative rounded-[12px] overflow-hidden border border-[#EAE3D9] cursor-pointer"
+              style={{ aspectRatio: "4/3" }}
               onClick={() => openLightbox(idx)}
             >
               <img src={img.src} alt={img.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]" loading="lazy" />

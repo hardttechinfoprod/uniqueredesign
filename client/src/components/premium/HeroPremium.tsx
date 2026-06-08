@@ -12,10 +12,11 @@ export default function HeroPremium() {
         <img
           src="/unique-2.jpeg"
           alt="Unique Instituto de Cirurgia — Recepção"
-          className="w-full h-full object-cover opacity-50 sm:opacity-65"
+          className="w-full h-full object-cover opacity-50 sm:opacity-65 object-[25%_center] sm:object-center"
           loading="eager"
+          fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#0B1F2E]/95 via-[#0B1F2E]/85 to-[#0B1F2E]/55 lg:from-[#0B1F2E]/95 lg:via-[#0B1F2E]/75 lg:to-[#0B1F2E]/25" />
+        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#0B1F2E]/98 via-[#0B1F2E]/90 to-[#0B1F2E]/70 lg:from-[#0B1F2E]/95 lg:via-[#0B1F2E]/75 lg:to-[#0B1F2E]/25" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0B1F2E]/40 to-transparent" />
       </div>
 
@@ -41,7 +42,7 @@ export default function HeroPremium() {
               </h1>
 
               {/* Subtitle — factual */}
-              <p className="text-[15px] sm:text-[16px] md:text-base text-white/70 max-w-xl leading-[1.75] mb-6 sm:mb-8 font-sans">
+              <p className="text-[15px] sm:text-[16px] md:text-base text-white/80 max-w-xl leading-[1.75] mb-6 sm:mb-8 font-sans">
                 Estrutura cirúrgica completa e corpo clínico especializado. 
                 Oferecemos acompanhamento integrado com cirurgiões, cardiologistas, 
                 psicólogos e nutricionistas para garantir a sua segurança antes, durante e após o procedimento.
@@ -67,19 +68,33 @@ export default function HeroPremium() {
               </div>
 
               {/* Trust badges row */}
-              <div className="grid grid-cols-1 sm:flex sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-6 text-[12px] text-white/60 font-sans">
-                <div className="flex items-center gap-3 bg-white/[0.04] sm:bg-transparent p-3 sm:p-0 rounded-[8px] border border-white/[0.06] sm:border-transparent">
+              <div className="grid grid-cols-1 sm:flex sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-6 text-[12px] text-white/85 font-sans mb-8">
+                <div className="flex items-center gap-3 bg-white/[0.03] backdrop-blur-[2px] sm:bg-transparent p-3 sm:p-0 rounded-[8px] border border-white/[0.08] sm:border-transparent">
                   <Phone size={13} className="text-[#D9B77A] shrink-0" />
-                  <a href="tel:1145862755" className="hover:text-white/70 transition-colors font-medium">(11) 4586-2755</a>
+                  <a href="tel:1145862755" className="hover:text-white transition-colors font-medium">(11) 4586-2755</a>
                 </div>
-                <div className="flex items-center gap-3 bg-white/[0.04] sm:bg-transparent p-3 sm:p-0 rounded-[8px] border border-white/[0.06] sm:border-transparent">
+                <div className="flex items-center gap-3 bg-white/[0.03] backdrop-blur-[2px] sm:bg-transparent p-3 sm:p-0 rounded-[8px] border border-white/[0.08] sm:border-transparent">
                   <Clock size={13} className="text-[#D9B77A] shrink-0" />
                   <span className="font-medium">Seg a Sex, 8h às 18h</span>
                 </div>
-                <div className="flex items-center gap-3 bg-white/[0.04] sm:bg-transparent p-3 sm:p-0 rounded-[8px] border border-white/[0.06] sm:border-transparent">
+                <div className="flex items-center gap-3 bg-white/[0.03] backdrop-blur-[2px] sm:bg-transparent p-3 sm:p-0 rounded-[8px] border border-white/[0.08] sm:border-transparent">
                   <MapPin size={13} className="text-[#D9B77A] shrink-0" />
                   <span className="font-medium">Centro, Jundiaí — SP</span>
                 </div>
+              </div>
+
+              {/* Mobile stats inline */}
+              <div className="flex lg:hidden gap-8 border-t border-white/[0.08] pt-5 mt-2">
+                {[
+                  { v: "7+", l: "Especialistas" },
+                  { v: "9", l: "Especialidades" },
+                  { v: "2017", l: "Fundação" },
+                ].map((s, i) => (
+                  <div key={i} className="flex flex-col">
+                    <span className="text-lg font-bold text-[#D9B77A] leading-none mb-1 font-sans">{s.v}</span>
+                    <span className="text-[8px] uppercase tracking-[0.18em] text-white/40 font-sans">{s.l}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -107,20 +122,6 @@ export default function HeroPremium() {
             </motion.div>
           </div>
         </div>
-      </div>
-
-      {/* Mobile stats */}
-      <div className="lg:hidden absolute bottom-6 left-[22px] right-[22px] flex gap-8 border-t border-white/[0.08] pt-4 z-10">
-        {[
-          { v: "7+", l: "Especialistas" },
-          { v: "9", l: "Especialidades" },
-          { v: "2017", l: "Fundação" },
-        ].map((s, i) => (
-          <div key={i} className="flex flex-col">
-            <span className="text-lg font-bold text-[#D9B77A] leading-none mb-0.5 font-sans">{s.v}</span>
-            <span className="text-[8px] uppercase tracking-[0.18em] text-white/35 font-sans">{s.l}</span>
-          </div>
-        ))}
       </div>
     </section>
   );

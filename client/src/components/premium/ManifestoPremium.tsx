@@ -31,7 +31,7 @@ export default function ManifestoPremium() {
 
           {/* Image */}
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative aspect-[4/3] rounded-[14px] overflow-hidden border border-[#EAE3D9]">
+            <div className="relative rounded-[14px] overflow-hidden border border-[#EAE3D9]" style={{ aspectRatio: "4/3" }}>
               <img
                 src="/unique-1.jpeg"
                 alt="Interior do Unique Instituto"

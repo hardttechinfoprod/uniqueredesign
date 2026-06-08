@@ -22,7 +22,7 @@ export default function FooterPremium() {
           {/* Column 1: Logo & Slogan */}
           <div className="md:col-span-4 flex flex-col items-start">
             <img
-              src="/logosemfundo-removebg-preview.png"
+              src="/logocerta.png"
               alt="Unique Instituto de Cirurgia"
               className="h-11 sm:h-12 w-auto object-contain mb-6"
               style={{ filter: "brightness(0) invert(1)" }}

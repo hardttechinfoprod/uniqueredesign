@@ -89,22 +89,42 @@ export default function LocationMap({
         </div>
       </div>
 
-      {/* Mapa à Direita */}
-      <div className="location-map-wrapper">
-        <iframe
-          title="Localização da Clínica"
-          className="location-map"
-          src={mapUrl}
-          style={{ 
-            width: "100%", 
-            height: "100%",
-            border: "none",
-            borderRadius: "16px"
-          }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+      {/* Mapa à Direita (Substituído por Card Premium conforme orientação para evitar iframes quebrados/CSP) */}
+      <div className="location-map-wrapper flex flex-col items-center justify-center bg-[#0B1F2E] p-6 text-center border border-[#EAE3D9]/10 relative overflow-hidden group">
+        {/* Subtle grid pattern background */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#FCFAF7_1px,transparent_1px)] [background-size:16px_16px]" />
+        
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#D9B77A]/[0.02] blur-2xl" />
+        <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-[#D9B77A]/[0.02] blur-2xl" />
+
+        {/* MapPin Icon container */}
+        <div className="relative mb-5 z-10">
+          <div className="w-16 h-16 rounded-full bg-[#D9B77A]/10 flex items-center justify-center text-[#D9B77A] animate-pulse">
+            <MapPin size={28} />
+          </div>
+          <div className="absolute inset-0 w-16 h-16 rounded-full border border-[#D9B77A]/30 scale-125 opacity-30 pointer-events-none" />
+        </div>
+
+        {/* Text */}
+        <h4 className="text-white text-base font-semibold mb-2 z-10 font-sans">
+          Localização da Clínica
+        </h4>
+        <p className="text-white/60 text-xs max-w-[260px] mb-6 leading-relaxed z-10 font-sans font-light">
+          Rua Conrado Augusto Offa, 92 <br />
+          Centro, Jundiaí - SP <br />
+          CEP: 13201-105
+        </p>
+
+        {/* Button */}
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Rua+Conrado+Augusto+Offa,+92+-+Centro,+Jundia%C3%AD+-+SP"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center px-6 h-11 bg-[#D9B77A] hover:bg-[#c9a76a] text-[#0B1F2E] text-[10px] font-bold uppercase tracking-[0.2em] rounded-[6px] transition-all duration-300 font-sans shadow-lg shadow-[#D9B77A]/10 z-10"
+        >
+          Abrir no Google Maps
+        </a>
       </div>
     </div>
   );

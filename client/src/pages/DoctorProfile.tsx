@@ -55,11 +55,13 @@ export default function DoctorProfile() {
             
             {/* Left Column: Portrait */}
             <div className="lg:col-span-5 w-full">
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#F7F2EA] rounded-[14px] border border-[#EAE3D9] shadow-sm">
+              <div className="relative w-full overflow-hidden bg-[#F7F2EA] rounded-[14px] border border-[#EAE3D9] shadow-sm" style={{ aspectRatio: "4/5" }}>
                 <img
                   src={doctor.image}
                   alt={cleanName(doctor.name)}
                   className="w-full h-full object-cover object-top"
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#123247]/40 via-[#123247]/10 to-transparent pt-12 pb-4 px-4 text-white text-[10px] font-bold uppercase tracking-[0.15em] font-sans">
                   {doctor.specialty}
@@ -280,7 +282,7 @@ export default function DoctorProfile() {
                         className="group flex flex-col bg-[#FCFAF7] border border-[#EAE3D9] rounded-[12px] p-2.5 hover:border-[#D9B77A]/50 transition-all duration-400 hover:shadow-[0_8px_24px_rgba(18,50,71,0.06)] hover:-translate-y-1"
                       >
                         {/* Portrait Photo */}
-                        <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#F7F2EA] rounded-[10px]">
+                        <div className="relative w-full overflow-hidden bg-[#F7F2EA] rounded-[10px]" style={{ aspectRatio: "4/5" }}>
                           <img
                             src={otherDoc.imageCompressed}
                             alt={nameOnly}

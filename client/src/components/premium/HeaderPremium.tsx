@@ -39,7 +39,9 @@ export default function HeaderPremium() {
         }`}
       >
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-10">
-          <div className="flex items-center justify-between h-18 md:h-20">
+          <div className={`flex items-center justify-between transition-all duration-400 ${
+            showScrolledHeader ? "h-18 md:h-20" : "h-24 md:h-26"
+          }`}>
 
             {/* Logo */}
             <a
@@ -51,14 +53,18 @@ export default function HeaderPremium() {
               <img
                 src={showScrolledHeader ? "/logomaior.png" : "/mobilelogo.png"}
                 alt="Unique Instituto de Cirurgia"
-                className="block sm:hidden w-auto object-contain max-w-[155px] transition-all duration-400 h-[34px]"
+                className={`block sm:hidden w-auto object-contain transition-all duration-400 ${
+                  showScrolledHeader ? "max-w-[180px] h-[42px]" : "max-w-[280px] h-[68px]"
+                }`}
                 style={!showScrolledHeader ? { filter: "brightness(0) invert(1)" } : {}}
               />
               {/* Desktop Logo */}
               <img
                 src={showScrolledHeader ? "/logomaior.png" : "/logocerta.png"}
                 alt="Unique Instituto de Cirurgia"
-                className="hidden sm:block w-auto object-contain max-w-[220px] transition-all duration-400 h-[40px]"
+                className={`hidden sm:block w-auto object-contain transition-all duration-400 ${
+                  showScrolledHeader ? "max-w-[220px] h-[40px]" : "max-w-[270px] h-[54px]"
+                }`}
                 style={!showScrolledHeader ? { filter: "brightness(0) invert(1)" } : {}}
               />
             </a>
@@ -147,7 +153,7 @@ export default function HeaderPremium() {
               <img
                 src="/logomaior.png"
                 alt="Unique Instituto"
-                className="h-[34px] w-auto object-contain max-w-[155px]"
+                className="h-[56px] w-auto object-contain max-w-[240px]"
               />
               <button
                 onClick={() => setIsMobileOpen(false)}

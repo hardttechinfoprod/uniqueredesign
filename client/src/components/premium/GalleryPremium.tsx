@@ -13,7 +13,7 @@ const featured = [
   { src: "/unique-2.jpeg", title: "Entrada Principal" },
   { src: "/unique-3.jpeg", title: "Consultório" },
   { src: "/unique-5.jpeg", title: "Ambiente Integrado" },
-  { src: "/unique-7.jpeg", title: "Sala Clínica" },
+  { src: "/unique-7.jpeg", title: "Espaço Café" },
   { src: "/unique-11.jpeg", title: "Sala de Atendimento" },
 ];
 

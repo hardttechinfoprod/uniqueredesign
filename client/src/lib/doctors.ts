@@ -96,7 +96,7 @@ export const doctors: Doctor[] = [
   {
     id: "orthopedist",
     name: "Drª. Patricia Silveira",
-    specialty: "Cirurgiã Geral",
+    specialty: "Coloproctologista",
     image: "/dr-6.jpeg",
     imageCompressed: "/dr-6.jpeg",
     bio: "Médica cirurgiã geral minimamente invasiva com atuação em coloproctologia, saúde intestinal funcional, com abordagem que integra cirurgia minimamente invasiva e gastroenterologia funcional. Atua no diagnóstico e tratamento de doenças anorretais e distúrbios funcionais do aparelho digestivo, combinando técnicas cirúrgicas, exames especializados e estratégias terapêuticas integrativas. Atende pacientes com foco em medicina baseada em evidências aliada à abordagem funcional e personalizada.",

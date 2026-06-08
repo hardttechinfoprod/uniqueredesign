@@ -3,16 +3,19 @@ import { Menu, X, Phone } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
-  { label: "O Instituto", href: "#manifesto" },
-  { label: "Especialidades", href: "#services" },
-  { label: "Corpo Clínico", href: "#doctors" },
-  { label: "Depoimentos", href: "#testimonials" },
-  { label: "Contato", href: "#contact" },
+  { label: "O Instituto", href: "/#manifesto" },
+  { label: "Especialidades", href: "/#services" },
+  { label: "Corpo Clínico", href: "/#doctors" },
+  { label: "Depoimentos", href: "/#testimonials" },
+  { label: "Contato", href: "/#contact" },
 ];
 
 export default function HeaderPremium() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  const isDoctorPage = typeof window !== "undefined" && window.location.pathname.includes("/doctor");
+  const showScrolledHeader = isScrolled || isDoctorPage;
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 60);
@@ -30,7 +33,7 @@ export default function HeaderPremium() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
-          isScrolled
+          showScrolledHeader
             ? "bg-[#FCFAF7]/95 backdrop-blur-sm border-b border-[#EAE3D9]/70 shadow-[0_1px_12px_rgba(18,50,71,0.06)]"
             : "bg-transparent border-b border-transparent"
         }`}
@@ -40,23 +43,23 @@ export default function HeaderPremium() {
 
             {/* Logo */}
             <a
-              href="#hero"
+              href="/#hero"
               aria-label="Unique Instituto — Página inicial"
               className="flex items-center shrink-0"
             >
               {/* Mobile Logo */}
               <img
-                src={isScrolled ? "/logomaior.png" : "/mobilelogo.png"}
+                src={showScrolledHeader ? "/logomaior.png" : "/mobilelogo.png"}
                 alt="Unique Instituto de Cirurgia"
                 className="block sm:hidden w-auto object-contain max-w-[155px] transition-all duration-400 h-[34px]"
-                style={!isScrolled ? { filter: "brightness(0) invert(1)" } : {}}
+                style={!showScrolledHeader ? { filter: "brightness(0) invert(1)" } : {}}
               />
               {/* Desktop Logo */}
               <img
-                src={isScrolled ? "/logomaior.png" : "/logocerta.png"}
+                src={showScrolledHeader ? "/logomaior.png" : "/logocerta.png"}
                 alt="Unique Instituto de Cirurgia"
                 className="hidden sm:block w-auto object-contain max-w-[220px] transition-all duration-400 h-[40px]"
-                style={!isScrolled ? { filter: "brightness(0) invert(1)" } : {}}
+                style={!showScrolledHeader ? { filter: "brightness(0) invert(1)" } : {}}
               />
             </a>
 
@@ -67,7 +70,7 @@ export default function HeaderPremium() {
                   key={link.href}
                   href={link.href}
                   className={`text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 relative py-1 group ${
-                    isScrolled
+                    showScrolledHeader
                       ? "text-[#0B1F2E] hover:text-[#D9B77A]"
                       : "text-white/75 hover:text-white"
                   }`}
@@ -75,7 +78,7 @@ export default function HeaderPremium() {
                   {link.label}
                   <span
                     className={`absolute bottom-0 left-0 w-0 h-[1.5px] transition-all duration-300 group-hover:w-full ${
-                      isScrolled ? "bg-[#D9B77A]" : "bg-[#D9B77A]"
+                      showScrolledHeader ? "bg-[#D9B77A]" : "bg-[#D9B77A]"
                     }`}
                   />
                 </a>
@@ -88,7 +91,7 @@ export default function HeaderPremium() {
               <a
                 href="tel:1145862755"
                 className={`flex items-center gap-2 text-[11px] font-medium tracking-wide transition-all duration-300 ${
-                  isScrolled
+                  showScrolledHeader
                     ? "text-[#667789] hover:text-[#123247] opacity-100"
                     : "text-white/60 hover:text-white opacity-0 pointer-events-none"
                 }`}
@@ -104,7 +107,7 @@ export default function HeaderPremium() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`inline-flex items-center px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] rounded-[6px] transition-all duration-300 ${
-                  isScrolled
+                  showScrolledHeader
                     ? "bg-[#0B1F2E] text-[#FCFAF7] hover:bg-[#123247]"
                     : "bg-[#D9B77A] text-[#0B1F2E] hover:bg-[#c8a568]"
                 }`}
@@ -117,7 +120,7 @@ export default function HeaderPremium() {
             <button
               onClick={() => setIsMobileOpen((v) => !v)}
               className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-[6px] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9B77A] focus-visible:ring-offset-2 ${
-                isScrolled ? "text-[#0B1F2E]" : "text-white"
+                showScrolledHeader ? "text-[#0B1F2E]" : "text-white"
               }`}
               aria-label={isMobileOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={isMobileOpen}

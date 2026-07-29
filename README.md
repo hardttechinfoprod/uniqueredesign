@@ -10,7 +10,7 @@ Este é o repositório da landing page e páginas de perfil médico premium da *
 *   **React** — Biblioteca para construção das interfaces.
 *   **Tailwind CSS v4** — Framework CSS utilitário para design responsivo avançado.
 *   **Wouter** — Roteador SPA leve e rápido.
-*   **Lucide React** — Biblioteca de ícones.
+*   **Lucide React** — Biblioteca de íconesss.
 
 ---
 

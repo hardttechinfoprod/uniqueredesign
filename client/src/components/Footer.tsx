@@ -100,7 +100,8 @@ export default function Footer() {
             <img
               src="/ssl-secure.png"
               alt="SSL Secure Connection"
-              className="h-9 w-auto object-contain select-none"
+              className="h-8 w-auto object-contain select-none opacity-85 hover:opacity-100 transition-opacity"
+              title="Conexão Segura SSL"
             />
           </div>
 

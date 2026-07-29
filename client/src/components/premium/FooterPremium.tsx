@@ -104,25 +104,33 @@ export default function FooterPremium() {
         {/* Divider */}
         <div className="border-t border-white/10 my-8" />
 
-        {/* Lower Row: Social media icons and copyrights */}
+        {/* Lower Row: Social media icons, SSL Certificate, and copyrights */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          {/* Social icons */}
-          <div className="flex gap-4">
-            {socialLinks.map((link, idx) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={idx}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:bg-[#D9B77A]/20 hover:border-[#D9B77A] flex items-center justify-center text-white/80 hover:text-[#FCFAF7] transition-all duration-300"
-                  title={link.label}
-                >
-                  <Icon size={16} />
-                </a>
-              );
-            })}
+          {/* Social icons e Selo SSL */}
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="flex gap-4">
+              {socialLinks.map((link, idx) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={idx}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:bg-[#D9B77A]/20 hover:border-[#D9B77A] flex items-center justify-center text-white/80 hover:text-[#FCFAF7] transition-all duration-300"
+                    title={link.label}
+                  >
+                    <Icon size={16} />
+                  </a>
+                );
+              })}
+            </div>
+            <img
+              src="/ssl-secure.png"
+              alt="SSL Secure Connection"
+              className="h-8 w-auto object-contain select-none opacity-85 hover:opacity-100 transition-opacity"
+              title="Conexão Segura SSL"
+            />
           </div>
 
           {/* Copyright text */}

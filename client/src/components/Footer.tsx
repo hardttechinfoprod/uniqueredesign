@@ -78,23 +78,30 @@ export default function Footer() {
 
         {/* Redes Sociais e Copyright */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 animate-fade-in-up">
-          {/* Redes Sociais */}
-          <div className="flex gap-4">
-            {socialLinks.map((link) => {
-              const IconComponent = link.icon;
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="icon-circle transition-transform duration-500 hover:scale-110 hover:text-accent"
-                  title={link.label}
-                >
-                  <IconComponent size={20} />
-                </a>
-              );
-            })}
+          {/* Redes Sociais e Selo SSL */}
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="flex gap-4">
+              {socialLinks.map((link) => {
+                const IconComponent = link.icon;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="icon-circle transition-transform duration-500 hover:scale-110 hover:text-accent"
+                    title={link.label}
+                  >
+                    <IconComponent size={20} />
+                  </a>
+                );
+              })}
+            </div>
+            <img
+              src="/ssl-secure.png"
+              alt="SSL Secure Connection"
+              className="h-9 w-auto object-contain select-none"
+            />
           </div>
 
           {/* Copyright */}
